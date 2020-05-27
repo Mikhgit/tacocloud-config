@@ -12,4 +12,5 @@ spring:
       password: qwerty1234
 
 taco:
-  external: test
+  external:
+    ingredient: test
