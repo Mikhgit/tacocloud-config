@@ -9,8 +9,8 @@ eureka:
 spring:
   data:
     mongodb:
-      password: 12345678
+      password: qwerty1234
 
 taco:
   external:
-    ingredient: ingredient
+    ingredient: test
