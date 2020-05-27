@@ -10,3 +10,6 @@ spring:
   data:
     mongodb:
       password: qwerty1234
+
+taco:
+  external: test
