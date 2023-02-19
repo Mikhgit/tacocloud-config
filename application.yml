@@ -9,8 +9,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://keycloak:8085/auth/realms/taco-realm:eureka
-
+          issuer-uri: http://keycloak:8085/auth/realms/taco-realm
 
 eureka:
   client:
