@@ -1,16 +1,25 @@
-server:
-  port: 0
+spring:
+  data:
+    mongodb:
+      host: mongo
+      port: 27017
+      database: tacocloudtest
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak:8085/auth/realms/taco-realm:eureka
+
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_URI:http://registry-service:8761/eureka/}
+  # ensure correct connection instance to service via feign client inside docker
+  # by specify url property as service name.
+  # For example: url=http://taco-service
+  instance:
+    prefer-ip-address: true
 
-spring:
-  data:
-    mongodb:
-      password: 12345
 
-taco:
-  external:
-    ingredient: qwer
