@@ -11,6 +11,12 @@ spring:
         jwt:
           issuer-uri: http://keycloak:8085/auth/realms/taco-realm
 
+  cloud:
+    config:
+      allowOverride: true
+      overrideNone: true
+      overrideSystemProperties: false
+
 eureka:
   client:
     service-url:
