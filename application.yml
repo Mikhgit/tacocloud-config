@@ -10,12 +10,20 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://keycloak:8085/auth/realms/taco-realm
+      client:
+        provider:
+          keycloak:
+            token-uri: http://keycloak:8085/auth/realms/taco-realm/protocol/openid-connect/token
 
   cloud:
     config:
       allowOverride: true
       overrideNone: true
       overrideSystemProperties: false
+
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
 
 eureka:
   client:
@@ -27,4 +35,8 @@ eureka:
   instance:
     prefer-ip-address: true
 
-
+taco:
+  ingredient-service:
+    url: http://ingredient-service
+  taco-service:
+    url: http://taco-service
