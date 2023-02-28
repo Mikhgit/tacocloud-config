@@ -49,3 +49,15 @@ taco:
     url: http://ingredient-service
   taco-service:
     url: http://taco-service
+
+server:
+  forward-headers-strategy: framework
+
+springdoc:
+  swagger-ui:
+    oauth:
+      clientId: swagger-ui
+  oAuthFlow:
+    authorizationUrl: http://keycloak:8085/auth/realms/taco-realm/protocol/openid-connect/auth
+    tokenUrl: http://keycloak:8085/auth/realms/taco-realm/protocol/openid-connect/token
+    use-pkce-with-authorization-code-grant: true
