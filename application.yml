@@ -25,6 +25,12 @@ spring:
     host: rabbitmq
     port: 5672
 
+  zipkin:
+    baseUrl: http://zipkin:9411
+  sleuth:
+    sampler:
+      probability: 1.0
+
 eureka:
   client:
     service-url:
